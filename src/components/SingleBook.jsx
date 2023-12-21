@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
+import CommentArea from "./CommentArea";
 
 // function SingleBook({ book }) {
 
@@ -47,6 +48,8 @@ class SingleBook extends Component {
             <Card.Text className="bg-dark text-light rounded-5">
               <b> {this.props.book.price}$</b>
             </Card.Text>
+            {this.state.selected && <CommentArea selected={this.state.selected} elementId={this.props.book.asin} />}
+
           </Card.Body>
         </Card>
       </Col>
